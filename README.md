@@ -1,2 +1,3 @@
-To use the code you will need to do an npm install at the folder BACK and another one at the folder FRONT.
-Afterwards a npm run dev at FRONT folder and npm start at BACK folder
+Web app for Mobile use of a List of the current Karaoke Songs on the directory
+
+3 views where you can search, look up the list and show 
