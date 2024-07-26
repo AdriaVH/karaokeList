@@ -1,8 +1,13 @@
 <template>
     <AddToQue></AddToQue>
+
     <div class=" scrollbar scrollbar-track-transparent scrollbar-thumb-transparent scrollbar-corner-transparent flex flex-col gap-2 items-center overflow-hidden bg-opacity-40 bg-slate-900 h-full" :class="{
         'overflow-scroll':karaoke.expanded,
-}">
+}">   
+ <!-- <img src='../assets/images/keys2.png' class=" transition-all duration-[2000ms] top-3 left-3 absolute opacity-50 " :class="{
+    'w-[40px]': karaoke.expanded,
+    'w-[00px]': !karaoke.expanded,
+}" alt=""> -->
         <div v-if="songBarSongs[0]"
             class=" ml-4 text-center font-semibold text-white gap-2 items-center flex  mt-1 w-full rounded-xl -gap-1"
             :class="{ 'animate-slide':!karaoke.expanded, 'animate-end': karaoke.expanded, 'centered-object': karaoke.expanded, ' mt-4' : karaoke.expanded,  'flex-row':!karaoke.expanded,
