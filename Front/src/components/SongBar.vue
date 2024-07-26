@@ -1,4 +1,5 @@
 <template>
+    <AddToQue></AddToQue>
     <div class=" scrollbar scrollbar-track-transparent scrollbar-thumb-transparent scrollbar-corner-transparent flex flex-col gap-2 items-center overflow-hidden bg-opacity-40 bg-slate-900 h-full" :class="{
         'overflow-scroll':karaoke.expanded,
 }">
@@ -30,7 +31,7 @@
 </template>
 <script>
 import { useKaraokeStore } from '@/stores/karaoke';
-
+import AddToQue from './AddToQue.vue';
 export default {
     name: "SongBar",
     data() {
@@ -38,6 +39,7 @@ export default {
             animateStates: {},
         }
     },
+    components:{AddToQue},
     computed: {
         songBarSongs() {
             let array = this.karaoke.songs
