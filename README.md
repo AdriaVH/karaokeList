@@ -1,6 +1,35 @@
-Web app for Mobile use of a List of the current Karaoke Songs on the directory
+# karaokeList
 
-3 views where you can search, look up the list and show 
+This file should help you get started and give you an overall idea of this Web App for Mobile
+
+
+## Project Setup for both FRONT & BACK folders
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for FRONT
+
+```sh
+npm run dev
+```
+
+### Compile BACK
+
+```sh
+npm start
+```
+
+
+
+```sh
+npm run lint
+```
+
+
+3 views where you can: search, look up the main list and share through a QR code the same web App to your colleagues. More details in pictures below.
+
 ![qrview](https://github.com/user-attachments/assets/2b9983c0-e336-4a9c-a3fe-dd43d799f804)
 ![listview](https://github.com/user-attachments/assets/4eeb0db1-afe7-4970-a7f4-478d2133dce1)
 ![galleryview](https://github.com/user-attachments/assets/ec1bc643-0901-4e2c-8d33-1a59e0509a9c)
