@@ -22,12 +22,6 @@ npm start
 ```
 
 
-
-```sh
-npm run lint
-```
-
-
 3 views where you can: search, look up the main list and share through a QR code the same web App to your colleagues. More details in pictures below.
 
 ![qrview](https://github.com/user-attachments/assets/2b9983c0-e336-4a9c-a3fe-dd43d799f804)
