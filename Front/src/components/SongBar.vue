@@ -3,7 +3,7 @@
         'overflow-scroll':karaoke.expanded,
 }">
         <div v-if="songBarSongs[0]"
-            class=" text-center font-semibold text-white gap-2 items-center flex  mt-1 w-full rounded-xl -gap-1"
+            class=" ml-4 text-center font-semibold text-white gap-2 items-center flex  mt-1 w-full rounded-xl -gap-1"
             :class="{ 'animate-slide':!karaoke.expanded, 'animate-end': karaoke.expanded, 'centered-object': karaoke.expanded, ' mt-4' : karaoke.expanded,  'flex-row':!karaoke.expanded,
             'flex-col':karaoke.expanded }">
             <img :src="`/images/${songBarSongs[0].SongPath}`" class=" rounded-md imgOnQue " :class="{
@@ -86,7 +86,7 @@ export default {
     transition: transform 2s ease-in-out; 
 }
 .centered-object {
-    transform: translateX(4%); 
+    transform: translateX(0%); 
     transition: transform 2s ease-in-out; 
 }
 @keyframes slideRightToLeft {

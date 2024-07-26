@@ -11,13 +11,14 @@
           <RouterLink to="/Share"
             class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">
             <div
-            class=" ring-white ring-opacity-30 ring-4 bg-opacity-40 h-[27px] w-[27px]  rounded-md  bg-slate-800 flex flex-col items-center">
-            <img class="mt-0.5  w-6" src="./assets/images/qrWebAlpha.png" alt="">
-    
-        </div>          </RouterLink>
+              class=" ring-white ring-opacity-30 ring-2 bg-opacity-40 h-[27px] w-[27px]  rounded-md  bg-slate-800 flex flex-col items-center">
+              <img class="mt-0.5  w-6" src="./assets/images/qrWebAlpha.png" alt="">
+
+            </div>
+          </RouterLink>
           <RouterLink to="/Search"
             class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">
-             <img class="w-7" src="./assets/images/searchAlpha.png" alt="">
+            <img class="w-7" src="./assets/images/searchAlpha.png" alt="">
 
           </RouterLink>
         </div>
@@ -31,11 +32,12 @@
       </div>
 
     </div>
-    <div  class=" visible w-full absolute songBar-container bottom-0 flex flex-col"
+    <div class=" visible w-full absolute songBar-container bottom-0 flex flex-col"
       :class="{ 'expanded': karaoke.expanded, 'h-24': visible, 'h-0': !visible }">
-      <button @click="toggleHeight" class=" flex flex-col items-center border-t-8 bg-opacity-40 bg-slate-900 w-full" :class="{'h-8':visible}" style="border-color: rgba(75, 85, 90,0.3);">
+      <button @click="toggleHeight" class=" flex flex-col items-center border-t-8 bg-opacity-40 bg-slate-900 w-full"
+        :class="{ 'h-8': visible }" style="border-color: rgba(75, 85, 90,0.3);">
         <img :src="currentImage" alt="Default Image"
-          class=" -mt-3 transition duration-500 hover:scale-100 scale-75 h-14 w-20"  />
+          class=" -mt-3 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
       </button>
       <SongBar></SongBar>
     </div>
@@ -46,7 +48,6 @@
 import SongBar from './components/SongBar.vue'
 import { useKaraokeStore } from './stores/karaoke';
 import { watch } from 'vue';
-
 
 export default {
   name: "App",
@@ -159,9 +160,5 @@ export default {
 .songBar-container.expanded {
   /* Expanded height */
   height: 450px;
-
-
 }
-
-
 </style>
