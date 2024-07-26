@@ -2,7 +2,7 @@
     <div>
         <div :class="{
             'h-[200px]': karaoke.expanded,
-            'h-[560px]': !karaoke.expanded
+            'h-[66vh]': !karaoke.expanded
         }"
             class=" list-container gap-2 relative px-3 mt-6 ring-gray-600 ring-opacity-30 ring-8 bg-opacity-40 w-[330px] rounded-lg  bg-slate-900 flex flex-col items-center">
             <div class=" mt-3 flex flex-row gap-10">
