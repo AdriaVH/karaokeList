@@ -61,13 +61,13 @@ export default {
   created() {
     this.getSongs()
   },
-  //  async mounted() {
-  //   this.getSongs();
-  //   this.intervalId = setInterval(this.getSongs, 10000);
-  // },
-  // beforeUnmount() {
-  //   clearInterval(this.intervalId); 
-  // },
+   async mounted() {
+    this.getSongs();
+    this.intervalId = setInterval(this.getSongs, 3000);
+  },
+  beforeUnmount() {
+    clearInterval(this.intervalId); 
+  },
 
   data() {
     return {
@@ -92,9 +92,9 @@ export default {
       }
     },
     async getSongs() {
-      console.log(this.karaoke.songs)
+      // console.log(this.karaoke.songs)
       try {
-        this.karaoke.songs = null
+
         const response = await fetch('http://localhost:3018/api/songs')
         const data = await response.json()
         data.forEach(song => {
