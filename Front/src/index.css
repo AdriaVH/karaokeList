@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: "montse-regular";
+    src: url("../src/assets/fonts/Montserrat-Regular.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "montse-light";
+    src: url("../src/assets/fonts/Montserrat-Medium.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "montse-bold";
+    src: url("../src/assets/fonts/Montserrat-Bold.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 184, 184, 0.5); /* Color of the thumb */
+    height: 60px;
+    width: 10px;
+    border-radius: 7px;
+    border: 2px ;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 9px;
+    height: 40px; /* Adjust the width of the scrollbar */
+}
+.scrollbar::-webkit-scrollbar-track {
+    width: 2px;; /* Background color of the tracking area */
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(184, 184, 184); /* Darker semi-transparent black on hover */
+}
