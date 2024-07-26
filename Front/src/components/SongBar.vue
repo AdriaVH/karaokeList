@@ -53,6 +53,7 @@ export default {
 
                 return dateA.getTime() - dateB.getTime();
             });
+
             return finalArray
         }
     },
@@ -85,7 +86,7 @@ export default {
     transition: transform 2s ease-in-out; 
 }
 .centered-object {
-    transform: translateX(1%); 
+    transform: translateX(4%); 
     transition: transform 2s ease-in-out; 
 }
 @keyframes slideRightToLeft {

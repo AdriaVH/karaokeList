@@ -8,7 +8,7 @@
           <RouterLink to="/" class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">
             List</RouterLink>
           <RouterLink to="/Share"
-            class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">Share</RouterLink>
+            class=" ml-6 transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">Share</RouterLink>
           <RouterLink to="/Search"
             class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">Search
           </RouterLink>
@@ -23,12 +23,11 @@
       </div>
 
     </div>
-    <div class=" visible w-full absolute songBar-container bottom-0 flex flex-col"
+    <div  class=" visible w-full absolute songBar-container bottom-0 flex flex-col"
       :class="{ 'expanded': karaoke.expanded, 'h-24': visible, 'h-0': !visible }">
-      <button @click="toggleHeight" class=" flex flex-col items-center top-ring  bg-opacity-40 bg-slate-900 w-full"
-        :class="{ 'h-8': visible }">
+      <button @click="toggleHeight" class=" flex flex-col items-center border-t-8 bg-opacity-40 bg-slate-900 w-full" :class="{'h-8':visible}" style="border-color: rgba(75, 85, 90,0.3);">
         <img :src="currentImage" alt="Default Image"
-          class=" transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
+          class=" -mt-3 transition duration-500 hover:scale-100 scale-75 h-14 w-20"  />
       </button>
       <SongBar></SongBar>
     </div>
@@ -46,14 +45,7 @@ export default {
   components: { SongBar },
   setup() {
     const karaoke = useKaraokeStore()
-    watch(
-      () => karaoke.songs,
-      (newSongs, oldSongs) => {
-        karaoke.songs = newSongs
-        console.log(newSongs)
-      },
-      { deep: true }
-    );
+
     return { karaoke }
 
   },
@@ -76,15 +68,6 @@ export default {
     }
   },
   computed: {
-    // visible() {
-    //   let result = false
-    //   for (let song of this.karaoke.songs) {
-    //     if (song.Selected) {
-    //       result = true
-    //     }
-    //   }
-    //   return result
-    // }
   },
 
   methods: {
@@ -167,30 +150,10 @@ export default {
 
 .songBar-container.expanded {
   /* Expanded height */
-  height: 400px;
+  height: 450px;
 
 
 }
 
-.top-ring {
-  position: relative;
-  width: 100%;
 
-  height: 100px;
-
-  background: transparent;
-
-}
-
-.top-ring::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-
-  background: rgba(75, 85, 99, 0.3);
-
-}
 </style>
