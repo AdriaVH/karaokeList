@@ -48,7 +48,7 @@ computed:{
 },
 created(){
   this.karaoke.$subscribe((mutation, state)=>{
-    console.log('State changed:', state);
+
 
     this.songsFiltered
     this.listView

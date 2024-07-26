@@ -61,12 +61,14 @@ export default {
   created() {
     this.getSongs()
   },
-   async mounted() {
+  async mounted() {
     this.getSongs();
-    this.intervalId = setInterval(this.getSongs, 3000);
+    if (this.karaoke.songsOnCart == false&&this.activeSongs) {
+      this.intervalId = setInterval(this.getSongs, 3000);
+    }
   },
   beforeUnmount() {
-    clearInterval(this.intervalId); 
+    clearInterval(this.intervalId);
   },
 
   data() {
@@ -77,6 +79,15 @@ export default {
     }
   },
   computed: {
+    activeSongs() {
+      let result = false
+      this.karaoke.songs.map(song => {
+        if (song.isActive) {
+          result = true
+        }
+      })
+      return result
+    }
   },
 
   methods: {
