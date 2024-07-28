@@ -4,6 +4,11 @@
     <div class=" scrollbar scrollbar-track-transparent scrollbar-thumb-transparent scrollbar-corner-transparent flex flex-col gap-2 items-center overflow-hidden bg-opacity-40 bg-slate-900 h-full" :class="{
         'overflow-scroll':karaoke.expanded,
 }">   
+<button @click="toggleHeight" class=" w-[40vw] bg-black flex flex-col items-center"
+:class="{ 'h-8': visible }" >
+<img :src="currentImage" alt="Default Image"
+  class=" -mt-3 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
+</button>
  <img @click="showingOptions=!showingOptions" src='../assets/images/keys2.png' class=" transition-all duration-[2000ms] top-3 left-3 absolute opacity-50 " :class="{
     'w-[40px]': karaoke.expanded,
     'w-[00px]': !karaoke.expanded,
@@ -43,7 +48,8 @@ export default {
     data() {
         return {
             animateStates: {},
-            showingOptions:false
+            showingOptions:false,
+                  currentImage: "../src/assets/images/arrowUp.png"
         }
     },
     components:{AddToQue},
@@ -102,6 +108,15 @@ try {
 }
 
 },
+toggleHeight() {
+      if (!this.karaoke.expanded) {
+        this.currentImage = "../src/assets/images/arrowDown.png"
+      } else {
+        this.currentImage = "../src/assets/images/arrowUp.png"
+      }
+      this.karaoke.expanded = !this.karaoke.expanded;
+
+    },
     },
     setup() {
         const karaoke = useKaraokeStore();

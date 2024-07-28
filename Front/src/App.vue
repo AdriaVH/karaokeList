@@ -34,11 +34,11 @@
     </div>
     <div class=" visible w-full absolute songBar-container bottom-0 flex flex-col"
       :class="{ 'expanded': karaoke.expanded, 'h-24': visible, 'h-0': !visible }">
-      <button @click="toggleHeight" class=" flex flex-col items-center border-t-8 bg-opacity-40 bg-slate-900 w-full"
-        :class="{ 'h-8': visible }" style="border-color: rgba(75, 85, 90,0.3);">
+      <!-- <button @click="toggleHeight" class=" w-20 bg-black flex flex-col items-center"
+        :class="{ 'h-8': visible }" >
         <img :src="currentImage" alt="Default Image"
           class=" -mt-3 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
-      </button>
+      </button> -->
       <SongBar></SongBar>
     </div>
   </div>
