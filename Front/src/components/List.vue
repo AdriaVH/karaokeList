@@ -34,17 +34,20 @@
 
                 <div>
 
-                    <div v-if="karaoke.filteredSongs && karaoke.listView" class="  mr-2 flex flex-col my-2"
+                    <div v-if="karaoke.filteredSongs && karaoke.listView" class=" mr-2 flex flex-col my-2"
                         v-for="song in this.karaoke.filteredSongs">
-                        <div :id="song.Artist.charAt(0)" @click="songToCart(song)" :class="{
+                    <div :id="song.Artist.charAt(0)" @click="songToCart(song)" class=" rounded-lg  " :class="{'bg-gradient-to-br from-red-400 via-orange-300  to-blue-200 ':song.isActive,
+                'p-0.5':!gallery,
+            'p-[2.5px]':gallery}" >
+                        <div :class="{
                             'bg-slate-300': !song.Selected,
                             'bg-white bg-opacity-70': song.Selected,
                             'flex flex-row h-[90px]': gallery,
                             'pl-2': !gallery,
-                            'bg-gray-900': song.isActive
+                            ' bg-gray-950 bg-opacity-80 text-white text-opacity-80  ': song.isActive
 
                         }"
-                            class=" w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
+                            class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
                             <img v-if="gallery" :src="`/images/${song.SongPath}`"
                                 class=" rounded-md barcelona h-full w-[90px]" alt="">
                             <div class="flex flex-col" :class="{ 'h-[110px]': gallery }">
@@ -63,33 +66,39 @@
                             </div>
                         </div>
                     </div>
-                    <div v-else class=" mr-2 flex flex-col my-2" v-for="song in this.karaoke.songs">
-                        <div :id="song.Artist.charAt(0)" @click="selectSong(song)" :class="{
-                            'bg-slate-300': !song.Selected,
-                            'bg-white bg-opacity-70': song.Selected,
-                            'flex flex-row h-[90px]': gallery,
-                            'pl-2': !gallery
-
-                        }"
-                            class=" w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
-                            <img v-if="gallery" :src="`/images/${song.SongPath}`"
-                                class=" rounded-md barcelona h-full w-[90px]" alt="">
-                            <div class="flex flex-col" :class="{ 'h-[110px]': gallery }">
-                                <div class=" flex flex-col relative leading-5 " :class="{
-                                    'pl-2 w-[190px] h-[60px]': gallery
-                                }">
-                                    <p class=" mt-1 font-montsebold font-extrabold">{{ song.Artist }}</p>
-                                    <p class=" mb-1">{{ song.Title }}</p>
-                                </div>
-                                <img v-if="song.Language == 'Ingles' && gallery"
-                                    class=" opacity-70 mb-2 self-end  mr-0 w-[30px]" src="../assets/images/uk.png"
-                                    alt="">
-                                <img v-if="song.Language == 'Espanol' && gallery"
-                                    class=" opacity-70 mb-2 self-end  mr-0 w-[30px]" src="../assets/images/spain.png"
-                                    alt="">
-                            </div>
-                        </div>
                     </div>
+                    <div v-else  class=" mr-2 flex flex-col my-2" v-for="song in this.karaoke.songs">
+                        <div :id="song.Artist.charAt(0)" @click="songToCart(song)" class=" rounded-lg  " :class="{'bg-gradient-to-br from-red-400 via-orange-300  to-blue-200 ':song.isActive,
+                        'p-0.5':!gallery,
+                    'p-[2.5px]':gallery}" >
+                                <div :class="{
+                                    'bg-slate-300': !song.Selected,
+                                    'bg-white bg-opacity-70': song.Selected,
+                                    'flex flex-row h-[90px]': gallery,
+                                    'pl-2': !gallery,
+                                    ' bg-gray-950 bg-opacity-80 text-white text-opacity-80  ': song.isActive
+        
+                                }"
+                                    class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
+                                    <img v-if="gallery" :src="`/images/${song.SongPath}`"
+                                        class=" rounded-md barcelona h-full w-[90px]" alt="">
+                                    <div class="flex flex-col" :class="{ 'h-[110px]': gallery }">
+                                        <div class=" flex flex-col relative " :class="{
+                                            'h-[60px] w-[190px] pl-2': gallery
+                                        }">
+                                            <p class="font-montsebold font-extrabold">{{ song.Artist }}</p>
+                                            <p>{{ song.Title }}</p>
+                                        </div>
+                                        <img v-if="song.Language == 'Ingles' && gallery"
+                                            class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="../assets/images/uk.png"
+                                            alt="">
+                                        <img v-if="song.Language == 'Espanol' && gallery"
+                                            class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="../assets/images/spain.png"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                 </div>
             </div>
         </div>

@@ -3,9 +3,9 @@
         :class="{ 'bottom-14': !karaoke.expanded, 'bottom-[420px]': karaoke.expanded }">
 
         <button @click="selectSongs"
-            class="  flex flex-row items-center justify-center p-0.5 mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-400">
+            class="  flex flex-row items-center justify-center bg-opacity-0 p-0.5 mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 ">
             <span
-                class=" font-extrabold font-montseregular text-4xl relative px-6 py-3.5 transition-all ease-in duration-150 bg-opacity-90 bg-gray-900 rounded-full group-hover:bg-opacity-0">
+                class=" font-extrabold font-montseregular text-4xl px-6 py-3.5 transition-all ease-in duration-150 bg-opacity-90 bg-gray-900 rounded-full group-hover:bg-opacity-0">
                 +
                 <span v-if="karaoke.songsOnCart.length>1"
                     class=" border-black font-montseregular font-black absolute -right-1 -top-1  ease-in-out text-black inline-flex items-center justify-center w-6 h-6 ms-2 text-base bg-gradient-to-br from-blue-300 via-green-300 to-purple-300 bg-opacity-50 rounded-full">
@@ -13,8 +13,6 @@
                 </span>
             </span>
         </button>
-
-
 
     </div>
 </template>
@@ -37,12 +35,10 @@ export default {
                 let toString = now.toISOString();
                 song.TimeStamp = toString.slice(0, 19).replace('T', ' ');
 
-
                 console.log(`TimeStamp property value is: ${song.TimeStamp}`)
+                this.karaoke.songsOnCart=""
                 this.updateSong(song)
             }
-
-
 
         },
         async updateSong(song) {
@@ -53,14 +49,12 @@ export default {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(
                     song)
-
             };
             try {
                 const response = await fetch(`http://localhost:3018/api/songs/${song.Id}`, requestOptions)
                 const data = await response.json()
 
                 console.log(requestOptions)
-
 
             } catch (err) {
                 console.log(err)

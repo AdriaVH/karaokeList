@@ -10,7 +10,11 @@ export default {
       montsebold: ["montse-bold", "sans-serif"],
       montselight: ["monste-light", "sans-serif"]
     },
-    extend: {},
+    extend: {
+      spacing: {
+        'full-min-5': 'calc(100% - 5px)',
+      },
+    },
   },
   plugins: [
     require('tailwind-scrollbar'),],
