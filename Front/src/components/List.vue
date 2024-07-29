@@ -1,8 +1,9 @@
 <template>
     <div>
         <div :class="{
-            'h-[200px]': karaoke.expanded,
-            'h-[66vh]': !karaoke.expanded
+            'h-[20vh]': karaoke.expanded,
+            'h-[66vh]': !karaoke.expanded,
+            'h-[62vh]':karaoke.listView&!karaoke.expanded
         }"
             class=" list-container gap-2 relative px-3 mt-6 ring-gray-600 ring-opacity-30 ring-8 bg-opacity-40 w-[330px] rounded-lg  bg-slate-900 flex flex-col items-center">
             <div class=" mt-3 flex flex-row gap-10">
@@ -44,7 +45,7 @@
                             'bg-white bg-opacity-70': song.Selected,
                             'flex flex-row h-[90px]': gallery,
                             'pl-2': !gallery,
-                            ' bg-gray-950 bg-opacity-80 text-white text-opacity-80  ': song.isActive
+                            ' bg-opacity-100 bg-gray-800 text-white text-opacity-80  ': song.isActive
 
                         }"
                             class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
@@ -76,7 +77,7 @@
                                     'bg-white bg-opacity-70': song.Selected,
                                     'flex flex-row h-[90px]': gallery,
                                     'pl-2': !gallery,
-                                    ' bg-gray-950 bg-opacity-80 text-white text-opacity-80  ': song.isActive
+                                    ' bg-opacity-100 bg-gray-800 text-white text-opacity-80  ': song.isActive
         
                                 }"
                                     class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">

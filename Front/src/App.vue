@@ -59,13 +59,13 @@ export default {
 
   },
   created() {
-    this.getSongs()
+    this.intervalId = setInterval(this.getSongs, 3000);
   },
   async mounted() {
-    this.getSongs();
-    if (this.karaoke.songsOnCart == false&&this.activeSongs) {
+
       this.intervalId = setInterval(this.getSongs, 3000);
-    }
+
+    
   },
   beforeUnmount() {
     clearInterval(this.intervalId);
@@ -79,15 +79,7 @@ export default {
     }
   },
   computed: {
-    activeSongs() {
-      let result = false
-      this.karaoke.songs.map(song => {
-        if (song.isActive) {
-          result = true
-        }
-      })
-      return result
-    }
+
   },
 
   methods: {
@@ -103,7 +95,7 @@ export default {
       }
     },
     async getSongs() {
-      // console.log(this.karaoke.songs)
+
       try {
 
         const response = await fetch('http://localhost:3018/api/songs')
@@ -114,7 +106,11 @@ export default {
           song.SongPath = lastPart + " [CO].jpg"
 
         });
-        this.karaoke.songs = data
+        if (this.karaoke.songsOnCart.length == false) {
+          // console.log("Fetch done")
+          this.karaoke.songs = data
+        }
+
         this.fetchImages()
       } catch (err) {
 

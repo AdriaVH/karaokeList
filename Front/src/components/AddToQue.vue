@@ -1,9 +1,8 @@
 <template>
-    <div class=" right-[1vh] absolute mt-0 items-end flex flex-col transition-all duration-[2900ms] ease-in-out"
-        :class="{ 'bottom-14': !karaoke.expanded, 'bottom-[420px]': karaoke.expanded }">
+    <div class=" -mt-12 right-3 absolute items-end flex flex-col transition-all duration-[2900ms] ease-in-out">
 
         <button @click="selectSongs"
-            class="  flex flex-row items-center justify-center bg-opacity-0 p-0.5 mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 ">
+            class="  flex flex-row items-center justify-center bg-opacity-0 p-[3px] mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 ">
             <span
                 class=" font-extrabold font-montseregular text-4xl px-6 py-3.5 transition-all ease-in duration-150 bg-opacity-90 bg-gray-900 rounded-full group-hover:bg-opacity-0">
                 +
@@ -36,13 +35,14 @@ export default {
                 song.TimeStamp = toString.slice(0, 19).replace('T', ' ');
 
                 console.log(`TimeStamp property value is: ${song.TimeStamp}`)
-                this.karaoke.songsOnCart=""
                 this.updateSong(song)
             }
+            this.karaoke.songsOnCart=[]
+
 
         },
         async updateSong(song) {
-            let selected = song.Selected
+
             console.log(`Song updated succesfully`)
             const requestOptions = {
                 method: "PATCH",
