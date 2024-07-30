@@ -2,7 +2,7 @@
 
     <div class="h-full flex flex-col items-center">
         <div class=" z-20 relative h-screen w-screen flex flex-col " :style="{
-            backgroundImage: 'url(../src/assets/images/bg.png)',
+            backgroundImage: 'url(../src/assets/images/bg-doblehoritz.png)',
             backgroundPosition: 'center left',
             backgroundSize: '' // Adjust as needed
         }">
@@ -21,22 +21,19 @@
         <AddToQue class="z-40"></AddToQue>
         <div
             class=" absolute z-30 w-full valencia hide-scrollbar ring-gray-600 ring-opacity-30 ring-8  flex flex-col items-center overflow-scroll bg-opacity-40 bg-slate-900 h-full">
-
-
-
-            <button @click="toggleHeight" class="  mt-3 absolute w-[40vw] flex flex-col items-center">
+            <button @click="toggleHeight" class=" absolute w-[40vw] flex flex-col items-center h-4">
                 <img :src="currentImage" alt="Default Image"
-                    class=" -mt-7 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
+                    class=" -mt-3.5 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
             </button>
             <button @click="unlockingOptions"
                 class="  mt-2 transition-all duration-[2000ms] left-2 absolute opacity-50 " :class="{
-                    ' h-[7vw]': karaoke.expanded,
+                    ' h-[4vh]': karaoke.expanded,
                     'w-[00px] -ml-2': !karaoke.expanded,
                 }" alt=""> <img class="h-full w-full" :src="lockImage" alt=""> </button>
             <div v-if="songBarSongs[0]"
-                class="   ml-4 text-center font-semibold text-white gap-2 mt-8 items-center flex pt-3 w-[70vw] rounded-xl -gap-1"
+                class="  ml-4 text-center font-semibold text-white gap-2 items-center flex pt-3 w-[70vw] rounded-xl -gap-1"
                 :class="{
-                    'animate-slide': !karaoke.expanded, 'animate-end': karaoke.expanded, 'centered-object': karaoke.expanded, ' mt-4': karaoke.expanded, 'flex-row': !karaoke.expanded,
+                    'animate-slide flex-row mt-3': !karaoke.expanded, 'animate-end centered-object mt-8': karaoke.expanded,
                     'flex-col': karaoke.expanded
                 }">
                 <img :src="`/images/${songBarSongs[0].SongPath}`" class=" rounded-md imgOnQue " :class="{
@@ -266,7 +263,7 @@ export default {
 .madrid {
     transform: translateY(-100%);
     animation-fill-mode: forwards;
-    animation-duration: 2.5s;
+    animation-duration: 3s;
 }
 
 .madrid.slide-up {

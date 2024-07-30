@@ -50,7 +50,7 @@
                         }"
                             class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
                             <img v-if="gallery" :src="`/images/${song.SongPath}`"
-                                class=" rounded-md barcelona h-full w-[90px]" alt="">
+                                class=" rounded-l-lg barcelona h-full w-[90px]" alt="">
                             <div class="flex flex-col" :class="{ 'h-[110px]': gallery }">
                                 <div class=" flex flex-col relative " :class="{
                                     'h-[60px] w-[190px] pl-2': gallery
@@ -77,12 +77,12 @@
                                     'bg-white bg-opacity-70': song.Selected,
                                     'flex flex-row h-[90px]': gallery,
                                     'pl-2': !gallery,
-                                    ' bg-black bg-opacity-90 text-white text-opacity-80': song.isActive
+                                    ' bg-opacity-90  bg-slate-900  text-white text-opacity-80': song.isActive
         
                                 }"
-                                    class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
+                                    class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg bg-opacity-30">
                                     <img v-if="gallery" :src="`/images/${song.SongPath}`"
-                                        class=" rounded-md barcelona h-full w-[90px]" alt="">
+                                        class=" rounded-tl-lg barcelona h-full w-[90px]" alt="">
                                     <div class="flex flex-col" :class="{ 'h-[110px]': gallery }">
                                         <div class=" flex flex-col relative " :class="{
                                             'h-[60px] w-[190px] pl-2': gallery

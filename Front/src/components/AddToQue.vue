@@ -1,5 +1,5 @@
 <template>
-    <div class=" -mt-12 right-[4vw] absolute items-end flex flex-col transition-all duration-[2900ms] ease-in-out">
+    <div class=" -mt-14 right-[4vw] absolute items-end flex flex-col transition-all duration-[2900ms] ease-in-out">
 
         <button @click="selectSongs"
             class="  flex flex-row items-center justify-center bg-opacity-0 p-[3px] mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 ">
