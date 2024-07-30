@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade">
+    <transition name="fade" mode="out-in">
 
     <div v-if="!karaoke.songs[0]" class="loader">
         <div class="loader-inner">
@@ -256,10 +256,10 @@ console.log(song.isAlreadyAdded)
     transition: height 2s ease-in-out;
 }
 .fade-enter-active, .fade-leave-active {
-    transition: opacity 2s ease-out;
+    transition: opacity 2s ease-in-out;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 00;
+    opacity: 0;
 }
 .loader {
 
