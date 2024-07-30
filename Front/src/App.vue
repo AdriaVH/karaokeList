@@ -107,7 +107,7 @@ export default {
 
         });
         if (this.karaoke.songsOnCart.length == false) {
-          // console.log("Fetch done")
+          console.log("Fetch done")
           this.karaoke.songs = data
         }
 

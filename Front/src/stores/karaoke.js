@@ -1,5 +1,6 @@
 
 import { defineStore } from 'pinia'
+import { watch } from 'vue';
 
 export const useKaraokeStore = defineStore({
   id: 'karaoke',
@@ -26,7 +27,15 @@ export const useKaraokeStore = defineStore({
   },
   
   actions:{
+watchSongs(){
+  let result=""
+  watch(() => this.songs, (newValue, oldValue) => {
+result=newValue
+    // Perform actions based on the change
+  }, { deep: true });
 
+return result?true:false
+}
   },
 
 
