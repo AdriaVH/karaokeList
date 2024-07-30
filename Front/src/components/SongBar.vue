@@ -24,23 +24,23 @@
 
 
 
-            <button @click="toggleHeight" class=" mt-3 absolute w-[40vw] flex flex-col items-center">
+            <button @click="toggleHeight" class="  mt-3 absolute w-[40vw] flex flex-col items-center">
                 <img :src="currentImage" alt="Default Image"
-                    class=" -mt-6 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
+                    class=" -mt-7 transition duration-500 hover:scale-100 scale-75 h-14 w-20" />
             </button>
-            <img @click="showingOptions = !showingOptions" src='../assets/images/'
-                class=" mt-2 transition-all duration-[2000ms] left-2 absolute opacity-50 " :class="{
-                    'w-[40px]': karaoke.expanded,
+            <button @click="unlockingOptions"
+                class="  mt-2 transition-all duration-[2000ms] left-2 absolute opacity-50 " :class="{
+                    ' h-[7vw]': karaoke.expanded,
                     'w-[00px] -ml-2': !karaoke.expanded,
-                }" alt="">
+                }" alt=""> <img class="h-full w-full" :src="lockImage" alt=""> </button>
             <div v-if="songBarSongs[0]"
-                class=" ml-4 text-center font-semibold text-white gap-2 mt-6 items-center flex pt-3 w-full rounded-xl -gap-1"
+                class="   ml-4 text-center font-semibold text-white gap-2 mt-8 items-center flex pt-3 w-[70vw] rounded-xl -gap-1"
                 :class="{
                     'animate-slide': !karaoke.expanded, 'animate-end': karaoke.expanded, 'centered-object': karaoke.expanded, ' mt-4': karaoke.expanded, 'flex-row': !karaoke.expanded,
                     'flex-col': karaoke.expanded
                 }">
                 <img :src="`/images/${songBarSongs[0].SongPath}`" class=" rounded-md imgOnQue " :class="{
-                    'w-[140px]': karaoke.expanded,
+                    'w-[140px] -mt-2': karaoke.expanded,
                     'w-[60px]': !karaoke.expanded,
                 }" alt="">
                 <div @click="selectSong(songBarSongs[0])" class=" text-left">
@@ -88,6 +88,7 @@ export default {
             animateStates: {},
             showingOptions: false,
             currentImage: "../src/assets/images/arrowUp.png",
+            lockImage:"../src/assets/images/locked1.png",
             count: 0,
             innerCount: 0
         }
@@ -213,6 +214,17 @@ export default {
             this.karaoke.expanded = !this.karaoke.expanded;
 
         },
+        unlockingOptions(){
+            this.showingOptions = !this.showingOptions;
+            console.log(this.showingOptions)
+            if (!this.showingOptions) {
+                this.lockImage = "../src/assets/images/locked1.png"
+            } else {
+                this.lockImage = "../src/assets/images/unlocked1.png"
+            }
+
+
+        }
     },
     mounted() {
 

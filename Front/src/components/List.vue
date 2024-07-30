@@ -77,7 +77,7 @@
                                     'bg-white bg-opacity-70': song.Selected,
                                     'flex flex-row h-[90px]': gallery,
                                     'pl-2': !gallery,
-                                    ' bg-opacity-100 bg-gray-800 text-white text-opacity-80  ': song.isActive
+                                    ' bg-black bg-opacity-90 text-white text-opacity-80': song.isActive
         
                                 }"
                                     class="  w-full hover:bg-opacity-50 text-opacity-30 font-montseregular rounded-lg shadow  bg-opacity-30">
