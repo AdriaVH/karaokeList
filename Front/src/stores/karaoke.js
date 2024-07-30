@@ -12,7 +12,8 @@ export const useKaraokeStore = defineStore({
     onQue:[],
     coords:[],
     expanded:false,
-    songsOnCart:[]
+    songsOnCart:[],
+    visible:false
 
 
   

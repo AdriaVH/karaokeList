@@ -129,7 +129,7 @@ export default {
 <style>
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  opacity: 0 2s;
 
 }
 

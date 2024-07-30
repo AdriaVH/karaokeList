@@ -1,5 +1,7 @@
 <template>
-    <div class=" -mt-14 right-[4vw] absolute items-end flex flex-col transition-all duration-[2900ms] ease-in-out">
+    <transition name="fade">
+    
+    <div v-if="karaoke.songsOnCart[0]" class=" -mt-14 right-[4vw] absolute items-end flex flex-col transition-all duration-[2900ms] ease-in-out">
 
         <button @click="selectSongs"
             class="  flex flex-row items-center justify-center bg-opacity-0 p-[3px] mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 ">
@@ -14,6 +16,7 @@
         </button>
 
     </div>
+</transition>
 </template>
 <script>
 import { useKaraokeStore } from '@/stores/karaoke';
@@ -75,5 +78,11 @@ export default {
     background-image: url('/Front/src/assets/images/bg.png');
     background-size: contain;
     background-position: center;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter-to, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
 }
 </style>

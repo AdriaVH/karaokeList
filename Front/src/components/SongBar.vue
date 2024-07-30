@@ -7,7 +7,7 @@
             backgroundSize: '' // Adjust as needed
         }">
         </div>
-        <div ref="madridRef"
+        <div v-if="karaoke.visible" ref="madridRef"
             class="w-[180px] z-10 madrid absolute flex flex-col transition-all duration-500 ease-in-out transform">
             <div
                 class=" h-[28px] transition-opacity valencia flex flex-row items-center justify-center bg-opacity-0 pt-[0.1px] px-[3px] mb-2 text-sm font-medium rounded-t-lg group bg-gradient-to-br from-purple-200 from-10% via-30% to-90%  via-blue-200  to-emerald-300 text-white ">
