@@ -2,7 +2,7 @@
   <div>
 
     <List></List>
-<!-- <AddToQue></AddToQue> -->
+
   </div>
 </template>
 <script>

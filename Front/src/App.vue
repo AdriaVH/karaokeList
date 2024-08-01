@@ -1,5 +1,5 @@
 <template>
-  <div class=" relative h-screen flex flex-col " :style="{
+  <div class=" overflow-hidden relative h-screen flex flex-col " :style="{
     backgroundImage: 'url(../src/assets/images/bg-doble.png)'
   }">
     <div class=" w-full  flex flex-col">
@@ -32,22 +32,25 @@
       </div>
 
     </div>
-    <div class=" visible w-full absolute songBar-container bottom-0 flex flex-col"
-      :class="{ 'expanded': karaoke.expanded, 'h-[85px]': visible, 'h-0': !visible }">
-
+    <div class=" w-full absolute songBar-container bottom-0 flex flex-col"
+      :class="{ 'expanded': karaoke.expanded, 'h-0': !karaoke.expanded, 'h-[85px]': karaoke.songBarVisible, 'h-0': !karaoke.songBarVisible }">
+      <AddToQue class="z-40" :class="{'-mt-[51px]':karaoke.songBarVisible,
+    '-mt-[120px]':!karaoke.expanded}"></AddToQue>
       <SongBar></SongBar>
     </div>
+
   </div>
 </template>
 <script>
 
 import SongBar from './components/SongBar.vue'
+import AddToQue from './components/AddToQue.vue';
 import { useKaraokeStore } from './stores/karaoke';
 import { watch } from 'vue';
 
 export default {
   name: "App",
-  components: { SongBar },
+  components: { SongBar, AddToQue },
   setup() {
     const karaoke = useKaraokeStore()
 
@@ -70,7 +73,6 @@ export default {
   data() {
     return {
       song: {},
-      visible: true,
       currentImage: "../src/assets/images/arrowUp.png"
     }
   },
@@ -112,15 +114,6 @@ export default {
 
       }
     },
-    toggleHeight() {
-      if (!this.karaoke.expanded) {
-        this.currentImage = "../src/assets/images/arrowDown.png"
-      } else {
-        this.currentImage = "../src/assets/images/arrowUp.png"
-      }
-      this.karaoke.expanded = !this.karaoke.expanded;
-
-    },
   }
 }
 
@@ -129,28 +122,20 @@ export default {
 <style>
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0 2s;
-
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Adjust duration as needed */
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; /* Match duration with enter/leave */
 }
 
-.slide-fade-enter-active {
-  transition: all 1s ease;
-}
 
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
 
-.slide-fade-enter,
-.slide-fade-leave-to,
 .visible-enter-active,
 .visible-leave-active {
-  transition: height 0.5s ease-in-out;
+  transition: height 1s ease-in-out;
 }
 
 .songBar-container {

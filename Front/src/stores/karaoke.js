@@ -13,7 +13,7 @@ export const useKaraokeStore = defineStore({
     coords:[],
     expanded:false,
     songsOnCart:[],
-    visible:false
+    visible:true
 
 
   
@@ -21,10 +21,10 @@ export const useKaraokeStore = defineStore({
   getters:{
     songBarVisible() {
       let result = false
-      this.karaoke.songs.map(song=> {song.Selected?result=true:result=false})
+      this.songs.map(song=> {song.Selected?result=true:""})
       console.log(result)
       return result
-    }
+    },
   },
   
   actions:{

@@ -7,7 +7,7 @@
             backgroundSize: '' // Adjust as needed
         }">
         </div>
-        <div v-if="karaoke.visible" ref="madridRef"
+        <div v-show="karaoke.songBarVisible" ref="madridRef"
             class="w-[180px] z-10 madrid absolute flex flex-col transition-all duration-500 ease-in-out transform">
             <div
                 class=" h-[28px] transition-opacity valencia flex flex-row items-center justify-center bg-opacity-0 pt-[0.1px] px-[3px] mb-2 text-sm font-medium rounded-t-lg group bg-gradient-to-br from-purple-200 from-10% via-30% to-90%  via-blue-200  to-emerald-300 text-white ">
@@ -18,7 +18,7 @@
             </div>
 
         </div>
-        <AddToQue class="z-40"></AddToQue>
+
         <div
             class=" absolute z-30 w-full valencia hide-scrollbar ring-gray-600 ring-opacity-30 ring-8  flex flex-col items-center overflow-scroll bg-opacity-40 bg-slate-900 h-full">
             <button @click="toggleHeight" class=" absolute w-[40vw] flex flex-col items-center h-4">
@@ -229,13 +229,14 @@ export default {
     },
 
     setup() {
-        const karaoke = useKaraokeStore();
-        const madridRef = ref(null); // Reference to the .madrid element
-        onMounted(() => {
-            madridRef.value.style.transform = 'translateY(0)';
-        });
-        return { karaoke, madridRef };
-    },
+    const karaoke = useKaraokeStore();
+    const madridRef = ref(null); // Reference to the madrid element
+    onMounted(() => {
+        madridRef.value.style.transform = 'translateY(0)';
+    });
+    return { karaoke, madridRef };
+},
+
 
 }
 </script>

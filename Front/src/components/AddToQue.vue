@@ -1,14 +1,14 @@
 <template>
-    <transition name="fade">
+    <transition name="fade1">
     
-    <div v-if="karaoke.songsOnCart[0]" class=" -mt-14 right-[4vw] absolute items-end flex flex-col transition-all duration-[2900ms] ease-in-out">
+    <div v-show="karaoke.songsOnCart[0]" class=" right-[4vw] absolute items-end flex flex-col transition-all duration-[1000ms] ease-in-out">
 
         <button @click="selectSongs"
             class="  flex flex-row items-center justify-center bg-opacity-0 p-[3px] mb-2 text-sm font-medium rounded-full group bg-gradient-to-br from-purple-300 via-green-300 via-emerald-300 to-blue-300 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 text-white hover:text-gray-900 ">
             <span
                 class=" font-extrabold font-montseregular text-4xl px-6 py-3.5 transition-all ease-in duration-150 bg-opacity-90 bg-gray-900 rounded-full group-hover:bg-opacity-0">
                 +
-                <span v-if="karaoke.songsOnCart.length>1"
+                <span v-show="karaoke.songsOnCart.length>1"
                     class=" border-black font-montseregular font-black absolute -right-1 -top-1  ease-in-out text-black inline-flex items-center justify-center w-6 h-6 ms-2 text-base bg-gradient-to-br from-blue-300 via-green-300 to-purple-300 bg-opacity-50 rounded-full">
                     {{(karaoke.songsOnCart.length)}}
                 </span>
@@ -79,10 +79,13 @@ export default {
     background-size: contain;
     background-position: center;
 }
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.5s;
-}
-.fade-enter-to, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade1-enter-to, .fade1-leave-to {
     opacity: 0;
+}
+
+.fade1-enter-active, .fade1-leave-active {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 </style>
