@@ -31,7 +31,7 @@
                     'w-[00px] -ml-2': !karaoke.expanded,
                 }" alt=""> <img class="h-full w-full" :src="lockImage" alt=""> </button>
             <div v-if="songBarSongs[0]"
-                class="  ml-4 text-center font-semibold text-white gap-2 items-center flex pt-3 w-[70vw] rounded-xl -gap-1"
+                class="  ml-[3.2vw] text-center font-semibold text-white gap-2 items-center flex pt-3 w-[70vw] rounded-xl -gap-1"
                 :class="{
                     'animate-slide flex-row mt-3': !karaoke.expanded, 'animate-end centered-object mt-8': karaoke.expanded,
                     'flex-col': karaoke.expanded

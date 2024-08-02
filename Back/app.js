@@ -14,11 +14,8 @@ app.get('/', (request, response)=>{
 app.use("/api/songs", require('./routes/songs'))
 app.use("/api/coords", require('./routes/coords'))
 
-// app.use('/app', express.static(path.join(__dirname, '../Front/dist')));
+app.use( express.static('public'));
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../Front/dist/index.html'));
-//   });
   
 
 const port=process.env.PORT||3002
