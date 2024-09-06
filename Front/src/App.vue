@@ -96,7 +96,7 @@ export default {
 
       try {
 
-        const response = await fetch('http://localhost:3018/api/songs')
+        const response = await fetch(`${this.karaoke.localhost}/api/songs`)
         const data = await response.json()
         data.forEach(song => {
           const pathParts = song.SongPath.split("/");

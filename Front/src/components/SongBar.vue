@@ -190,7 +190,7 @@ export default {
 
             };
             try {
-                const response = await fetch(`http://localhost:3018/api/songs/${song.Id}`, requestOptions)
+                const response = await fetch(`${this.karaoke.address}/api/songs/${song.Id}`, requestOptions)
                 const data = await response.json()
 
                 console.log(requestOptions.body)

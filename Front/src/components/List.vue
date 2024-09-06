@@ -23,9 +23,12 @@
     
     <div v-else >
         <div :class="{
-            'h-[20vh]': karaoke.expanded,
-            'h-[66vh]': !karaoke.expanded,
-            'h-[62vh]':karaoke.listView&!karaoke.expanded
+            'h-[27vh]': karaoke.expanded&&!karaoke.listView,
+            'h-[19vh]':karaoke.expanded&&karaoke.listView,
+            'h-[66vh]': karaoke.listView&&!karaoke.expanded&&karaoke.songBarVisible,
+            'h-[73vh]':!karaoke.listView&&!karaoke.expanded&&karaoke.songBarVisible,
+            'h-[74vh]':!karaoke.songBarVisible&&karaoke.listView,
+            'h-[82vh]':!karaoke.songBarVisible&&!karaoke.listView
         }"
             class=" list-container gap-2 relative px-3 mt-6 ring-gray-600 ring-opacity-30 ring-8 bg-opacity-40 w-[330px] rounded-lg  bg-slate-900 flex flex-col items-center">
             <div class=" mt-3 flex flex-row gap-10">
@@ -210,7 +213,7 @@ console.log(song.isAlreadyAdded)
 
             };
             try {
-                const response = await fetch(`http://localhost:3018/api/songs/${song.Id}`, requestOptions)
+                const response = await fetch(`${this.karaoke.address}/api/songs/${song.Id}`, requestOptions)
                 const data = await response.json()
 
                 console.log(requestOptions)
