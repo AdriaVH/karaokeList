@@ -15,7 +15,7 @@ export const useKaraokeStore = defineStore({
     songsOnCart:[],
     visible:true,
     tunnel:"",
-    localhost:"http://localhost:3018"
+    localhost:"https://karaokelist-tsr3.onrender.com"
 
 
   
