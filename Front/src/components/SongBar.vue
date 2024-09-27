@@ -2,7 +2,7 @@
 
     <div class="h-full flex flex-col items-center">
         <div class=" z-20 relative h-screen w-screen flex flex-col " :style="{
-            backgroundImage: 'url(../src/assets/images/bg-doblehoritz.png)',
+            backgroundImage: 'url(.assets/images/bg-doblehoritz.png)',
             backgroundPosition: 'center left',
             backgroundSize: '' // Adjust as needed
         }">
@@ -84,8 +84,8 @@ export default {
         return {
             animateStates: {},
             showingOptions: false,
-            currentImage: "../src/assets/images/arrowUp.png",
-            lockImage:"../src/assets/images/locked1.png",
+            currentImage: "./assets/images/arrowUp.png",
+            lockImage:"./assets/images/locked1.png",
             count: 0,
             innerCount: 0
         }
