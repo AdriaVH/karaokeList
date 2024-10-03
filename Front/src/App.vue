@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       song: {},
-      currentImage: "../srcassets/images/arrowUp.png"
+      currentImage: "./assets/images/arrowUp.png"
     }
   },
   computed: {
