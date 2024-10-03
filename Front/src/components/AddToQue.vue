@@ -75,7 +75,7 @@ export default {
 </script>
 <style>
 .button-with-background-image {
-    background-image: url('/Front/src/assets/images/bg.png');
+    background-image: url('/Front/srcassets/images/bg.png');
     background-size: contain;
     background-position: center;
 }

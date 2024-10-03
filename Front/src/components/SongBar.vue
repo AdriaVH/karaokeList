@@ -2,7 +2,7 @@
 
     <div class="h-full flex flex-col items-center">
         <div class=" z-20 relative h-screen w-screen flex flex-col " :style="{
-            backgroundImage: 'url(.assets/images/bg-doblehoritz.png)',
+            backgroundImage: 'url(./images/bg-doblehoritz.png)',
             backgroundPosition: 'center left',
             backgroundSize: '' // Adjust as needed
         }">
@@ -49,7 +49,7 @@
                 class=" w-full items-center  flex flex-row text-center font-semibold text-white">
                 <div v-if="index > 0" class="flex flex-row w-full justify-center mt-1">
                     <img @click="songUp(song, index, index - 1)" v-if="showingOptions && index > 1"
-                        src="../assets/images/arrowGreenUp.png" class=" mt-1 opacity-70 h-[55px] w-[60px]" alt="">
+                        src="./assets/images/arrowGreenUp.png" class=" mt-1 opacity-70 h-[55px] w-[60px]" alt="">
 
                     <div @click="selectSong(song)"
                         class=" gap-3 items-center flex flex-row mt-1 w-[340px] rounded-lg -gap-1" :class="{
@@ -65,7 +65,7 @@
                     </div>
                     <img @click="songDown(song, index, index + 1)"
                         v-if="showingOptions && index !== songBarSongs.length - 1"
-                        src="../assets/images/arrowRedDown.png" class=" mt-1 opacity-70 h-[55px] w-[60px]" alt="">
+                        src="./assets/images/arrowRedDown.png" class=" mt-1 opacity-70 h-[55px] w-[60px]" alt="">
                 </div>
 
             </h1>
@@ -84,8 +84,8 @@ export default {
         return {
             animateStates: {},
             showingOptions: false,
-            currentImage: "./assets/images/arrowUp.png",
-            lockImage:"./assets/images/locked1.png",
+            currentImage: "./images/arrowUp.png",
+            lockImage:"./images/locked1.png",
             count: 0,
             innerCount: 0
         }
@@ -204,9 +204,9 @@ export default {
         },
         toggleHeight() {
             if (!this.karaoke.expanded) {
-                this.currentImage = "../src/assets/images/arrowDown.png"
+                this.currentImage = "./images/arrowDown.png"
             } else {
-                this.currentImage = "../src/assets/images/arrowUp.png"
+                this.currentImage = "./images/arrowUp.png"
             }
             this.karaoke.expanded = !this.karaoke.expanded;
 
@@ -215,9 +215,9 @@ export default {
             this.showingOptions = !this.showingOptions;
             console.log(this.showingOptions)
             if (!this.showingOptions) {
-                this.lockImage = "../src/assets/images/locked1.png"
+                this.lockImage = "../srcassets/images/locked1.png"
             } else {
-                this.lockImage = "../src/assets/images/unlocked1.png"
+                this.lockImage = "../srcassets/images/unlocked1.png"
             }
 
 

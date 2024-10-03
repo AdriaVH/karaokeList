@@ -1,6 +1,6 @@
 <template>
   <div class=" overflow-hidden relative h-screen flex flex-col " :style="{
-    backgroundImage: 'url(./assets/images/bg-doble.png)'
+    backgroundImage: 'url(./images/bg-doble.png)'
   }">
     <div class=" w-full  flex flex-col">
       <nav class="  ring-gray-600 ring-opacity-30 ring-8 bg-opacity-40 bg-slate-900 h-12 ">
@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       song: {},
-      currentImage: "../src/assets/images/arrowUp.png"
+      currentImage: "../srcassets/images/arrowUp.png"
     }
   },
   computed: {

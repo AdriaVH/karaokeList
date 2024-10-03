@@ -15,7 +15,7 @@
       "protocol": {
         "asset": true,
         "assetScope": [
-          "$APPDATA/assets/*"
+          "$APPDATAassets/*"
         ]
       }
     },

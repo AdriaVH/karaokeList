@@ -84,10 +84,10 @@
                                     <p>{{ song.Title }}</p>
                                 </div>
                                 <img v-if="song.Language == 'Ingles' && gallery"
-                                    class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="../assets/images/uk.png"
+                                    class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="./assets/images/uk.png"
                                     alt="">
                                 <img v-if="song.Language == 'Espanol' && gallery"
-                                    class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="../assets/images/spain.png"
+                                    class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="./assets/images/spain.png"
                                     alt="">
                             </div>
                         </div>
@@ -116,10 +116,10 @@
                                             <p>{{ song.Title }}</p>
                                         </div>
                                         <img v-if="song.Language == 'Ingles' && gallery"
-                                            class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="../assets/images/uk.png"
+                                            class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="./assets/images/uk.png"
                                             alt="">
                                         <img v-if="song.Language == 'Espanol' && gallery"
-                                            class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="../assets/images/spain.png"
+                                            class=" opacity-70 mb-2 self-end  mr-2 w-[30px]" src="./assets/images/spain.png"
                                             alt="">
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@ console.log(song.isAlreadyAdded)
         },
         async getCoords() {
             try {
-                const response = await fetch('http://localhost:3018/api/coords');
+                const response = await fetch(`${this.karaoke.address}/api/coords`);
                 const data = await response.json();
                 this.karaoke.coords = data;
                 // console.log(this.karaoke.songs[0].Selected)
