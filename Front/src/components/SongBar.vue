@@ -190,7 +190,7 @@ export default {
 
             };
             try {
-                const response = await fetch(`${this.karaoke.address}/api/songs/${song.Id}`, requestOptions)
+                const response = await fetch(`${this.karaoke.localhost}/api/songs/${song.Id}`, requestOptions)
                 const data = await response.json()
 
                 console.log(requestOptions.body)
@@ -215,9 +215,9 @@ export default {
             this.showingOptions = !this.showingOptions;
             console.log(this.showingOptions)
             if (!this.showingOptions) {
-                this.lockImage = "../srcassets/images/locked1.png"
+                this.lockImage = "./src/assets/images/locked1.png"
             } else {
-                this.lockImage = "../srcassets/images/unlocked1.png"
+                this.lockImage = "./src/assets/images/unlocked1.png"
             }
 
 

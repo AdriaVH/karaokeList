@@ -213,7 +213,7 @@ console.log(song.isAlreadyAdded)
 
             };
             try {
-                const response = await fetch(`${this.karaoke.address}/api/songs/${song.Id}`, requestOptions)
+                const response = await fetch(`${this.karaoke.localhost}/api/songs/${song.Id}`, requestOptions)
                 const data = await response.json()
 
                 console.log(requestOptions)

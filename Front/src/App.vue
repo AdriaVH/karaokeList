@@ -85,7 +85,7 @@ export default {
 
       try {
         this.song = null
-        const response = await fetch('http://localhost:3018/api/songs/1')
+        const response = await fetch('http://localhost:3000/api/songs/1')
         const data = await response.json()
         this.song = data
       } catch (err) {
