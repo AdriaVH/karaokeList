@@ -13,8 +13,8 @@ module.exports=class Song{
         this.TimeStamp=TimeStamp
 
     }
-    static getById(id) {
-        return db.execute(`SELECT * FROM karaoke_list WHERE karaokelist.Id=${id}`)
+    static getById(Id) {
+        return db.execute(`SELECT * FROM karaoke_list WHERE karaoke_list.Id=${Id}`)
     }
     static getAll() {
         return db.execute(`SELECT * FROM karaoke_list`)

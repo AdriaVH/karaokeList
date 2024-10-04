@@ -54,7 +54,7 @@ export default {
                     song)
             };
             try {
-                const response = await fetch(`${this.karaoke.address}/api/songs/${song.Id}`, requestOptions)
+                const response = await fetch(`https://spyware-cheats-viewer-hampshire.trycloudflare.com/api/songs/${song.Id}`, requestOptions)
                 const data = await response.json()
 
                 console.log(requestOptions)
@@ -75,7 +75,7 @@ export default {
 </script>
 <style>
 .button-with-background-image {
-    background-image: url('/Front/src/assets/images/bg.png');
+    background-image: url('/Front/srcassets/images/bg.png');
     background-size: contain;
     background-position: center;
 }

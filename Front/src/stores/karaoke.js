@@ -15,7 +15,7 @@ export const useKaraokeStore = defineStore({
     songsOnCart:[],
     visible:true,
     tunnel:"",
-    localhost:"https://plot-profits-partnership-reflects.trycloudflare.com"
+    localhost:"https://spyware-cheats-viewer-hampshire.trycloudflare.com"
 
 
   

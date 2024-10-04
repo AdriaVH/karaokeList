@@ -6,19 +6,19 @@
       <nav class="  ring-gray-600 ring-opacity-30 ring-8 bg-opacity-40 bg-slate-900 h-12 ">
         <div class=" font-montsebold mx-4 m-[10px] bg-opacity-70 flex justify-between text-slate-300 h-8">
           <RouterLink to="/" class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">
-            <img class="   w-7" src="./assets/images/listView.png" alt="">
+            <img class="   w-7" src="/images/listView.png" alt="">
           </RouterLink>
           <RouterLink to="/Share"
             class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">
             <div
               class=" ring-white ring-opacity-30 ring-2 bg-opacity-40 h-[27px] w-[27px]  rounded-md  bg-slate-800 flex flex-col items-center">
-              <img class="mt-0.5  w-6" src="./assets/images/qrWebAlpha.png" alt="">
+              <img class="mt-0.5  w-6" src="/images/qrWebAlpha.png" alt="">
 
             </div>
           </RouterLink>
           <RouterLink to="/Search"
             class=" transition duration-500 ease-in-out hover:scale-125 opacity-100 hover:text-white">
-            <img class="w-7" src="./assets/images/searchAlpha.png" alt="">
+            <img class="w-7" src="/images/searchAlpha.png" alt="">
 
           </RouterLink>
         </div>
